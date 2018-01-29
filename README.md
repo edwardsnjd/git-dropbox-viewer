@@ -23,10 +23,12 @@ Starting from say a branch ref we can ask Git to tell us about that ref, then dr
 
 https://git-scm.com/book/en/v2/Git-Internals-Packfiles
 
-Source
-------
+Development
+-----------
 
 A boilerplate Mithril application using ES6, Babel, Webpack 3, Sass/SCSS, Webpack dev server hot reload and eslint
+
+Deployed using Surge.
 
 ### How to use
 ```shell
@@ -37,6 +39,9 @@ npm start
 npm run build
   # Compiles the app for production and all compiled files lies on dist dir.
   # To deploy an the application simply transfer the dist to a web server's public directory.
+
+npm run deploy
+  # Use Surge to deploy
 ```
 
 ### Directory Structure:
@@ -64,5 +69,7 @@ npm run build
 │     └── index.js                # Application entry point
 │   
 ├── eslintrc.js                   # To configuring ESLint
-└── package.json                  # NPM scripts list
+├── package.json                  # NPM scripts list
+├── webpack.*.js                  # Webpack configuration files
+└-- CNAME                         # Surge CNAME config
 ```
