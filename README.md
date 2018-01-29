@@ -23,3 +23,46 @@ Starting from say a branch ref we can ask Git to tell us about that ref, then dr
 
 https://git-scm.com/book/en/v2/Git-Internals-Packfiles
 
+Source
+------
+
+A boilerplate Mithril application using ES6, Babel, Webpack 3, Sass/SCSS, Webpack dev server hot reload and eslint
+
+### How to use
+```shell
+npm install
+
+npm start
+  # Webpack dev server will run and opens the app on the browser with HRM,
+npm run build
+  # Compiles the app for production and all compiled files lies on dist dir.
+  # To deploy an the application simply transfer the dist to a web server's public directory.
+```
+
+### Directory Structure:
+```shell
+├── dist/                         # Compiled files
+│     ├── css/
+│     │    ├──main.css
+│     │    └──vendor.css
+│     ├── fonts/
+│     ├── images/
+│     ├── main-bundle.js
+│     ├── vendor-bundle.js
+│     └── index.html
+│
+├── node_modules/                 # 3rd-party libraries
+│
+├── src/                          # Application source files 
+│     │
+│     ├── views/                  # All your application view logic files
+│     │     ├── components/
+│     │     ├── your-pages.js
+│     │     └── ...
+│     │
+│     ├── index.html            
+│     └── index.js                # Application entry point
+│   
+├── eslintrc.js                   # To configuring ESLint
+└── package.json                  # NPM scripts list
+```
