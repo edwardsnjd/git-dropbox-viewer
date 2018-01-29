@@ -1,15 +1,16 @@
+module.exports = function () {
+    let looper = null;
+    let routeToMainInvokedCount = 0;
 
-module.exports = function (vnode) {
-    var looper = null;
-    var routeToMainInvokedCount = 0;
     return {
         routeToMain() {
             routeToMainInvokedCount++;
-            if (vnode.state.dataLoaded) {
+            if (this.dataLoaded) {
                 clearTimeout(looper);
                 m.route.set('/index');
             }
         },
+
         oninit() {
             this.dataLoaded = false;
             Promise.all([
@@ -21,20 +22,16 @@ module.exports = function (vnode) {
                 }
             });
         },
-        oncreate(/*vnode*/) {
-            console.log('DOM created');
-            looper = setTimeout(this.routeToMain, 2000);
+
+        oncreate() {
+            // Check periodically whether data has loaded
+            looper = setTimeout(() => this.routeToMain(), 1000);
         },
-        view(/*vnode*/) {
+
+        view() {
             return m('.holder', [
                 m('.preloader', [
-                    m('div'),
-                    m('div'),
-                    m('div'),
-                    m('div'),
-                    m('div'),
-                    m('div'),
-                    m('div'),
+                    m('div', 'Loading...'),
                 ]),
             ]);
         },

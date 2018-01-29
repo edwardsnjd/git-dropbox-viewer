@@ -1,7 +1,8 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
     devtool: 'inline-source-map',
@@ -12,10 +13,10 @@ module.exports = merge(common, {
         proxy: {
             '/api': 'http://localhost:3001',
         },
-        /*overlay: {
+        overlay: {
             errors: true,
             warnings: true,
-        },*/
+        },
     },
     module: {
         rules: [{
