@@ -21,3 +21,5 @@ Starting from say a branch ref we can ask Git to tell us about that ref, then dr
 - `tree` (a directory, has one or more `blob` or `tree` entries)
 - `blob` (a file)
 
+https://git-scm.com/book/en/v2/Git-Internals-Packfiles
+
