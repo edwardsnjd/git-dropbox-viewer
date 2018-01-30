@@ -5,10 +5,13 @@ A browser based ([unhosted][unhosted]) app that allows you to browse (readonly) 
 
 Hopefully quite light weight by leveraging other libraries for all the heavy lifting:
 
-1. VueJS UI layer (home grown)
-2. Git layer (https://github.com/creationix/js-git)
-3. FS layer (https://github.com/jvilk/BrowserFS)
-4. Dropbox API (http://dropbox.github.io/dropbox-sdk-js/)
+1. [ ] Mithril UI layer (home grown)
+2. [ ] Git layer (https://github.com/creationix/js-git)
+    - A thin custom adapter changes the FS layer to the expected interface (and prevents accidental writes!)
+3. [x] FS layer (https://github.com/sallar/dropbox-fs)
+    - Passed an authenticated Dropbox client, it offers a filesystem facade
+4. [x] Dropbox API (http://dropbox.github.io/dropbox-sdk-js/)
+    - Loaded via `script` tag from `unpkg` rather than via `npm` to avoid problems sniffing browser environment
 
 Design
 ------

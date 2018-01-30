@@ -46,6 +46,9 @@ module.exports = {
             }],
         }],
     },
+    externals: {
+        dropbox: 'Dropbox',
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',

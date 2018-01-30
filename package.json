@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dropbox": "^3.0.3",
+    "dropbox-fs": "^0.1.0",
     "es6-promise": "^4.2.4",
     "isomorphic-fetch": "^2.2.1",
     "mithril": "^1.1.5",
