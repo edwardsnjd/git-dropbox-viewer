@@ -1,3 +1,8 @@
+import dbx from './views/dropbox';
+
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 if (module.hot) {
     module.hot.accept();
 }
@@ -8,13 +13,16 @@ if (process.env.NODE_ENV !== 'production') {
 
 // require('./app.scss');
 
+// Ask Dropbox to authenticate (from URL token) before we start routing
+dbx.tryToAuthenticate();
+
 //Define your routes here
 const Splash = require('./views/splash-page');
-const IndexPage = require('./views/landing-page');
-const OtherPage = require('./views/other-page');
+const LoginPage = require('./views/login-page');
+const HomePage = require('./views/home-page');
 
 m.route(document.body.querySelector('#root'), '/splash', {
     '/splash': Splash,
-    '/index': IndexPage,
-    '/other': OtherPage,
+    '/login': LoginPage,
+    '/home': HomePage,
 });
