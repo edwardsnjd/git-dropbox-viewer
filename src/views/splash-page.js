@@ -1,22 +1,21 @@
-import { isAuthenticated } from './dropbox';
+import { isAuthenticated } from '../lib/dropbox';
 
-module.exports = function () {
+module.exports = () => ({
 
-    return {
-        oninit() {
-            if (isAuthenticated()) {
-                m.route.set('/home');
-            } else {
-                m.route.set('/login');
-            }
-        },
+    oninit() {
+        if (isAuthenticated()) {
+            m.route.set('/home');
+        } else {
+            m.route.set('/login');
+        }
+    },
 
-        view() {
-            return m('.holder', [
-                m('.preloader', [
-                    m('div', 'Loading...'),
-                ]),
-            ]);
-        },
-    };
-};
+    view() {
+        return m('.holder', [
+            m('.preloader', [
+                m('div', 'Loading...'),
+            ]),
+        ]);
+    },
+    
+});

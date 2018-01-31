@@ -1,5 +1,7 @@
-import dbx from './views/dropbox';
+import { tryToAuthenticate } from './lib/dropbox';
+import routes from './routes';
 
+// Dropbox SDK needs these for `fetch` and `promise`
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
@@ -11,18 +13,8 @@ if (process.env.NODE_ENV !== 'production') {
     console.log('Looks like we are in development mode!');
 }
 
-// require('./app.scss');
-
 // Ask Dropbox to authenticate (from URL token) before we start routing
-dbx.tryToAuthenticate();
+tryToAuthenticate();
 
-//Define your routes here
-const Splash = require('./views/splash-page');
-const LoginPage = require('./views/login-page');
-const HomePage = require('./views/home-page');
-
-m.route(document.body.querySelector('#root'), '/splash', {
-    '/splash': Splash,
-    '/login': LoginPage,
-    '/home': HomePage,
-});
+// Start Mithril routing
+m.route(document.getElementById('root'), routes.defaultRoute, routes.config);
