@@ -1,7 +1,7 @@
 const identity = r => r;
 
-const updateAfter = (promise, handler=identity) =>
-    handler(promise)
+const updateAfter = (value, handler=identity) =>
+    handler(Promise.resolve(value))
         .then(m.redraw)
         .catch(console.error);
 

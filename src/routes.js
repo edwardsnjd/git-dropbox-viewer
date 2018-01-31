@@ -4,6 +4,7 @@ import { isAuthenticated } from './lib/dropbox';
 import Splash from './views/splash-page';
 import LoginPage from './views/login-page';
 import HomePage from './views/home-page';
+import RepoPage from './views/repo-page';
 
 // Authentication route resolver
 const requireAuth = (component) => ({
@@ -24,5 +25,6 @@ module.exports = {
         '/splash': Splash,
         '/login': LoginPage,
         '/home': requireAuth(HomePage),
+        '/repo': requireAuth(RepoPage),
     },
 };

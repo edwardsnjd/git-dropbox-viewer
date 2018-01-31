@@ -15,9 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bodec": "^1.1.0",
     "dropbox-fs": "^0.1.0",
     "es6-promise": "^4.2.4",
     "isomorphic-fetch": "^2.2.1",
+    "js-git": "^0.7.8",
     "mithril": "^1.1.5",
     "query-string": "^5.0.1"
   },
